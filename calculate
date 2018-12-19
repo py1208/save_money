@@ -1,0 +1,29 @@
+def savemoney(count,cost,times):
+    card_value = 20
+    card_value_count = card_value * float(count)/10
+    print(card_value_count)
+    sum_money = 0
+    sum_money_count = 0
+    for i in range(times):
+        if sum_money < 100:
+            sum_money += cost
+        elif sum_money < 150:
+            sum_money += cost*0.8
+        elif sum_money >= 150:
+            sum_money += cost*0.5
+    print(sum_money)
+
+    for i in range(times):
+        if sum_money_count < 100:
+            sum_money_count += cost*0.8
+        elif sum_money_count < 150:
+            sum_money_count += cost*0.8*0.8
+        elif sum_money_count >= 150:
+            sum_money_count += cost*0.5*0.8
+    print(sum_money_count)
+    save_money = sum_money - sum_money_count - card_value_count
+
+    return save_money
+    
+sum=savemoney.savemoney(4,6,60)
+print(sum)
